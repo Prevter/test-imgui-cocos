@@ -5,9 +5,6 @@ set(CMAKE_OSX_ARCHITECTURES "x86_64")
 set(CMAKE_CXX_VISIBILITY_PRESET hidden)
 
 project(TestImGuiMod VERSION 1.0.0)
-if (APPLE)
-    enable_language(OBJCXX)
-endif()
 
 add_library(${PROJECT_NAME} SHARED
     src/main.cpp
@@ -22,7 +19,7 @@ endif()
 
 add_subdirectory($ENV{GEODE_SDK} ${CMAKE_CURRENT_BINARY_DIR}/geode)
 
-CPMAddPackage("gh:prevter/gd-imgui-cocos#cce1e2e")
+CPMAddPackage("gh:prevter/gd-imgui-cocos#caae42a")
 target_link_libraries(${PROJECT_NAME} imgui-cocos)
 
 setup_geode_mod(${PROJECT_NAME})
