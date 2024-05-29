@@ -5,6 +5,9 @@ set(CMAKE_OSX_ARCHITECTURES "x86_64")
 set(CMAKE_CXX_VISIBILITY_PRESET hidden)
 
 project(TestImGuiMod VERSION 1.0.0)
+if (APPLE)
+    enable_language(OBJCXX)
+endif()
 
 add_library(${PROJECT_NAME} SHARED
     src/main.cpp
